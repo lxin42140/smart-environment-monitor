@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>{{ title }}</title>
+</head>
+
+<body>
+	<h1 style="text-align: center;">{{ title }} - Sensor Data Sorted By ID Desc</h1>
+	<table style="border-collapse: collapse; margin: 0 auto;">
+		<thead>
+			<tr style="background-color: #f2f2f2;">
+				<th style="border: 1px solid #ddd; padding: 8px;">ID</th>
+				<th style="border: 1px solid #ddd; padding: 8px;">Device Name</th>
+				<th style="border: 1px solid #ddd; padding: 8px;">Abright</th>
+				<th style="border: 1px solid #ddd; padding: 8px;">Atemp</th>
+				<th style="border: 1px solid #ddd; padding: 8px;">Ahum</th>
+				<th style="border: 1px solid #ddd; padding: 8px;">Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in all_data %}
+			<tr>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['id'] }}</td>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['devicename'] }}</td>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['abright'] }}</td>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['atemp'] }}</td>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['ahum'] }}</td>
+				<td style="border: 1px solid #ddd; padding: 8px;">{{ data['timestamp'] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+
+</html>
